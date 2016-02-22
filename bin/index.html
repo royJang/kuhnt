@@ -109,12 +109,14 @@
 <script src="js/control/OrbitControls.js"></script>
 <script>
 
-    importJavascript("https://raw.githubusercontent.com/royJang/kuhnt/master/bin/index.js", "index.js");
+    importJavascript("https://cdn.rawgit.com/royJang/kuhnt/master/bin/index.js", "index.js");
 
     function importJavascript ( path, backup ){
         var js = document.createElement("script");
         js.src = navigator.onLine ? path : backup;
         js.defer = true;
+        js.charset = "utf-8";
+        js.type = "text/javascript";
         document.body.appendChild( js );
     }
 
