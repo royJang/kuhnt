@@ -14,7 +14,7 @@ module.exports = function (grunt){
 
     grunt.loadNpmTasks('grunt-node-webkit-builder');
 
-    grunt.registerTask('default',[
+    grunt.registerTask('default', [
         'nodewebkit'
     ]);
 };
