@@ -8,7 +8,7 @@
   "window": {
     "title": "kuhnt",
     "icon": "kitten.jpg",
-    "toolbar": true,
+    "toolbar": false,
     "frame": true,
     "width": 800,
     "height": 600,
