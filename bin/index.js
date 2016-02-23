@@ -1,7 +1,9 @@
 var fs = require("fs");
 var MODULE_PATH = require("path");
 
-//×èÖ¹ä¯ÀÀÆ÷Ä¬ÈÏĞĞ¡£
+alert(1);
+
+//é˜»æ­¢æµè§ˆå™¨é»˜è®¤è¡Œã€‚
 $(document).on({
     dragleave:function(e){
         e.preventDefault();
@@ -106,7 +108,7 @@ document.getElementById("drop-area").addEventListener("drop", function ( e ){
 
     fileList = [].slice.call( fileList );
 
-    //Ô¤ÀÀ
+    //é¢„è§ˆ
     for( var i in fileList ){
         var $file = fileList[ i ];
 
@@ -147,14 +149,14 @@ function centerMesh ( mesh ){
     mesh.rotation.set(0,0,0);
     mesh.up.set(0,1,0);
 
-    //È·¶¨Ä£ĞÍÌå»ı
+    //ç¡®å®šæ¨¡å‹ä½“ç§¯
     var box = new THREE.Box3().setFromObject( mesh );
     var size = box.size();
 
-    //¸ù¾İ±ê×¼Ä£ĞÍÀ´Ëõ·ÅÏÖÓĞÄ£ĞÍÌå»ı
+    //æ ¹æ®æ ‡å‡†æ¨¡å‹æ¥ç¼©æ”¾ç°æœ‰æ¨¡å‹ä½“ç§¯
     var scaling = (size.x / 92 + size.y / 93 + size.z / 33) / 3;
     mesh.scale.x = mesh.scale.y = mesh.scale.z = 1 / scaling;
-    //ÖØĞÂ¼ÆËãÄ£ĞÍÌå»ı
+    //é‡æ–°è®¡ç®—æ¨¡å‹ä½“ç§¯
     box = new THREE.Box3().setFromObject( mesh );
     size = box.size();
 
@@ -164,7 +166,7 @@ function centerMesh ( mesh ){
 
     var mArea = ( _width * _height ) / ( size.y * size.x );
 
-    //¸ù¾İÃæ»ı ºÍ ±ê×¼Ãæ»ıÔÙ´ÎËõ·ÅÄ£ĞÍ´óĞ¡
+    //æ ¹æ®é¢ç§¯ å’Œ æ ‡å‡†é¢ç§¯å†æ¬¡ç¼©æ”¾æ¨¡å‹å¤§å°
     if( mArea < 300 ) {
         scaling /= mArea / 300;
         mesh.scale.x = mesh.scale.y = mesh.scale.z = 1 / scaling;
@@ -211,19 +213,19 @@ function walk( path, callback ) {
     return callback( fileList );
 }
 
-//µ±¸ü¸Ä±³¾°ÑÕÉ«
+//å½“æ›´æ”¹èƒŒæ™¯é¢œè‰²
 $(".background-color").on("change", function ( e ){
     var c = $(this).val();
     updateRendererColor( c );
 });
 
-//Ä£ĞÍÑÕÉ«¸ü¸Ä
+//æ¨¡å‹é¢œè‰²æ›´æ”¹
 $(".model-color").on("change", function (){
     var c = $(this).val();
     updateModelColor( c );
 });
 
-//Çå¿ÕÔ¤ÀÀÁĞ±í
+//æ¸…ç©ºé¢„è§ˆåˆ—è¡¨
 $(".screenClear").on("click", function (){
     scenes = [];
     $(".preview").html("");
@@ -232,7 +234,7 @@ $(".screenClear").on("click", function (){
 
 var source = document.getElementById("source");
 
-//µã»÷½ØÍ¼
+//ç‚¹å‡»æˆªå›¾
 $(".screenShot").on("click", function (){
     $(".list-item").each(function (i, el){
         var cvs = $(el).find(".scene"),
