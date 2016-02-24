@@ -1,7 +1,7 @@
 var fs = require("fs");
 var MODULE_PATH = require("path");
 
-window.alert(8);
+window.alert(9);
 
 //阻止浏览器默认行。
 $(document).on({
@@ -71,7 +71,7 @@ function createScene (){
     var step = 1;
 
     var gridHelper = new THREE.GridHelper( size, step );
-    gridHelper.setColor( 0xffffff, 0xffffff );
+    gridHelper.setColors( 0xffffff, 0xffffff );
     scene.add( gridHelper );
 
     scene.userData.camera = camera;
