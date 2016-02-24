@@ -135,7 +135,7 @@ function loaderSTL ( path ){
         geometry.center();
         geometry.computeFaceNormals();
 
-        var material = new THREE.MeshPhongMaterial( { color: modelColor } );
+        var material = new THREE.MeshLambertMaterial( { color: modelColor } );
         var mesh = new THREE.Mesh( geometry, material );
 
         appendToSendBox( mesh, path );
