@@ -1,7 +1,7 @@
 var fs = require("fs");
 var MODULE_PATH = require("path");
 
-window.alert(4);
+alert(5);
 
 //阻止浏览器默认行。
 $(document).on({
@@ -54,12 +54,8 @@ function updateRendererColor ( color ){
 }
 
 function updateModelColor (){
-    
-    alert( modelColor );
-    
     scenes.forEach(function ( child ){
         child.userData.model3d.material.color.set( modelColor );
-        alert( child.userData.model3d.material.color );
     });
     render();
 }
