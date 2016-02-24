@@ -1,7 +1,7 @@
 var fs = require("fs");
 var MODULE_PATH = require("path");
 
-window.alert(11);
+window.alert(12);
 
 //阻止浏览器默认行。
 $(document).on({
