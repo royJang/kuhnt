@@ -54,8 +54,12 @@ function updateRendererColor ( color ){
 }
 
 function updateModelColor (){
+    
+    alert( modelColor );
+    
     scenes.forEach(function ( child ){
         child.userData.model3d.material.color.set( modelColor );
+        alert( child.userData.model3d.material.color );
     });
     render();
 }
