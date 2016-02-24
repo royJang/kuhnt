@@ -1,7 +1,7 @@
 var fs = require("fs");
 var MODULE_PATH = require("path");
 
-window.alert(15);
+window.alert(16);
 
 //阻止浏览器默认行。
 $(document).on({
@@ -65,6 +65,8 @@ function createScene (){
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera( 50, 1, 1, 1000 );
     camera.position.z = 10;
+    camera.position.x = 10;
+    camera.position.y = 10;
     camera.lookAt( 0, 0, 0 );
     
     var size = 1000;
@@ -154,7 +156,7 @@ function loaderOBJ ( $files ){
 
 function centerMesh ( mesh ){
     mesh.position.set( 0, 0, 0 );
-    mesh.rotation.set( 45, 45 , 45 );
+    mesh.rotation.set( -90, -90, -90 );
     mesh.up.set(0,1,0);
 
     //确定模型体积
