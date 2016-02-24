@@ -1,7 +1,7 @@
 var fs = require("fs");
 var MODULE_PATH = require("path");
 
-window.alert(16);
+window.alert(17);
 
 //阻止浏览器默认行。
 $(document).on({
@@ -156,7 +156,7 @@ function loaderOBJ ( $files ){
 
 function centerMesh ( mesh ){
     mesh.position.set( 0, 0, 0 );
-    mesh.rotation.set( -90, -90, -90 );
+    mesh.rotation.set( -90, 90, 90 );
     mesh.up.set(0,1,0);
 
     //确定模型体积
