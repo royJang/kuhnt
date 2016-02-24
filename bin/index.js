@@ -1,7 +1,7 @@
 var fs = require("fs");
 var MODULE_PATH = require("path");
 
-window.alert(2);
+window.alert(3);
 
 //阻止浏览器默认行。
 $(document).on({
@@ -32,6 +32,7 @@ function animate() {
 }
 
 var defaultColor = 0xffffff;
+var modelColor = 0x0099cc;
 
 function render() {
     scenes.forEach( function( scene ) {
@@ -52,9 +53,9 @@ function updateRendererColor ( color ){
     render();
 }
 
-function updateModelColor ( color ){
+function updateModelColor (){
     scenes.forEach(function ( child ){
-        child.userData.model3d.material.color.set( color );
+        child.userData.model3d.material.color.set( modelColor );
     });
     render();
 }
@@ -134,7 +135,7 @@ function loaderSTL ( path ){
         geometry.center();
         geometry.computeFaceNormals();
 
-        var material = new THREE.MeshPhongMaterial( { color: 0x0099cc } );
+        var material = new THREE.MeshPhongMaterial( { color: modelColor } );
         var mesh = new THREE.Mesh( geometry, material );
 
         appendToSendBox( mesh, path );
@@ -222,7 +223,8 @@ $(".background-color").on("change", function ( e ){
 //模型颜色更改
 $(".model-color").on("change", function (){
     var c = $(this).val();
-    updateModelColor( c );
+    modelColor = c;
+    updateModelColor();
 });
 
 //清空预览列表
