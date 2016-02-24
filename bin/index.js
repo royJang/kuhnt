@@ -1,7 +1,7 @@
 var fs = require("fs");
 var MODULE_PATH = require("path");
 
-window.alert(14);
+window.alert(15);
 
 //阻止浏览器默认行。
 $(document).on({
@@ -31,7 +31,7 @@ function animate() {
     render();
 }
 
-var defaultColor = 0xffffff;
+var defaultColor = 0xaaaaaa;
 var modelColor = 0x0099cc;
 
 function render() {
@@ -65,10 +65,10 @@ function createScene (){
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera( 50, 1, 1, 1000 );
     camera.position.z = 10;
-    camera.lookAt(0,0,0);
+    camera.lookAt( 0, 0, 0 );
     
-    var size = 2000;
-    var step = 50;
+    var size = 1000;
+    var step = 1;
 
     var gridHelper = new THREE.GridHelper( size, step );
     gridHelper.setColors( 0xffffff, 0xffffff );
@@ -153,8 +153,8 @@ function loaderOBJ ( $files ){
 }
 
 function centerMesh ( mesh ){
-    mesh.position.set(0,0,0);
-    mesh.rotation.set(0,0,0);
+    mesh.position.set( 0, 0, 0 );
+    mesh.rotation.set( 45, 45 , 45 );
     mesh.up.set(0,1,0);
 
     //确定模型体积
