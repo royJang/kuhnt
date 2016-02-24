@@ -1,7 +1,7 @@
 var fs = require("fs");
 var MODULE_PATH = require("path");
 
-window.alert(7);
+window.alert(8);
 
 //阻止浏览器默认行。
 $(document).on({
@@ -68,9 +68,10 @@ function createScene (){
     camera.lookAt(0,0,0);
     
     var size = 50;
-    var step = 10;
+    var step = 1;
 
     var gridHelper = new THREE.GridHelper( size, step );
+    gridHelper.setColor( 0xffffff, 0xffffff );
     scene.add( gridHelper );
 
     scene.userData.camera = camera;
@@ -157,27 +158,27 @@ function centerMesh ( mesh ){
     mesh.up.set(0,1,0);
 
     //确定模型体积
-    var box = new THREE.Box3().setFromObject( mesh );
-    var size = box.size();
+    //var box = new THREE.Box3().setFromObject( mesh );
+    //var size = box.size();
 
-    //根据标准模型来缩放现有模型体积
-    var scaling = (size.x / 92 + size.y / 93 + size.z / 33) / 3;
-    mesh.scale.x = mesh.scale.y = mesh.scale.z = 1 / scaling;
-    //重新计算模型体积
-    box = new THREE.Box3().setFromObject( mesh );
-    size = box.size();
+    // //根据标准模型来缩放现有模型体积
+    // var scaling = (size.x / 92 + size.y / 93 + size.z / 33) / 3;
+    // mesh.scale.x = mesh.scale.y = mesh.scale.z = 1 / scaling;
+    // //重新计算模型体积
+    // box = new THREE.Box3().setFromObject( mesh );
+    // size = box.size();
 
-    var _scene = $(".scene"),
-        _width = _scene.width(),
-        _height = _scene.height();
+    // var _scene = $(".scene"),
+    //     _width = _scene.width(),
+    //     _height = _scene.height();
 
-    var mArea = ( _width * _height ) / ( size.y * size.x );
+    // var mArea = ( _width * _height ) / ( size.y * size.x );
 
-    //根据面积 和 标准面积再次缩放模型大小
-    if( mArea < 300 ) {
-        scaling /= mArea / 300;
-        mesh.scale.x = mesh.scale.y = mesh.scale.z = 1 / scaling;
-    }
+    // //根据面积 和 标准面积再次缩放模型大小
+    // if( mArea < 300 ) {
+    //     scaling /= mArea / 300;
+    //     mesh.scale.x = mesh.scale.y = mesh.scale.z = 1 / scaling;
+    // }
 
     geometryOrigin(mesh).center();
 
